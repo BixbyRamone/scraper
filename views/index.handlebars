@@ -1,0 +1,40 @@
+<h1>Scraper App</h1>
+
+<p>Article Scraper... Note Taker</p>
+
+<!-- Data gets passed via server.js from this point forward. -->
+<ul>
+  {{#each articles}}
+  	<li>
+  		<p><span class="label">Article:</span> {{this.title}}</p>
+      <p><span class="label">Link:</span> {{this.link}}</p>
+      <p><span class="label">Note:</span> {{this.note}}</p>
+
+      {{!-- Form should send a delete command to the server --}}
+      <form>
+        <input type="hidden" name="id" value="{{this.id}}">
+        <button type="submit">Add a Note</button>
+      </form>
+
+      <a href="/{{this.id}}">Add a Note</a>
+  	</li>
+  {{/each}}
+</ul>
+
+<!-- <h2>Add a Quote</h2>
+
+{{!- Form should send a post command to the server -}}
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="auth">Article:</label>
+    <input type="text" id="auth" name="author">
+  </div>
+
+  <div class="form-group">
+    <label for="quo">Link:</label>
+    <textarea id="quo" name="quote" rows="8" cols="40"></textarea>
+  </div>
+
+  <button type="submit">Add Note</button>-->
+</form>

@@ -23,7 +23,9 @@
     "express": "^4.15.4",
     "express-handlebars": "^3.0.0",
     "method-override": "^2.3.9",
+    "mongojs": "^2.4.1",
     "mongoose": "^4.11.9",
+    "mongoose-unique-validator": "^1.0.5",
     "request": "^2.81.0"
   }
 }
