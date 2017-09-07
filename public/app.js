@@ -1,17 +1,73 @@
+// console.log("app.js connected")
+
+
+$.getJSON("/", function(data) {
+  // For each one
+  for (var i = 0; i < data.length; i++) {
+
+    console.log(data[i]);
+    console.log("==============================");
+    console.log("LOOK HERE!!", $("#appender"));
+    // Display the apropos information on the page
+     // $("#appender").append("<p>Test</p>");
+    // $("#appender").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
+  }
+});
+
+
+ $.ajax({
+    method: "GET",
+    url: "/articles/"
 // Grab the articles as a json
+
 $.getJSON("/articles", function(data) {
   // For each one
   for (var i = 0; i < data.length; i++) {
+
+    console.log(data[i]);
+    console.log("==============================");
+    console.log("LOOK HERE!!", $("#appender"));
     // Display the apropos information on the page
-    $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
+     // $("#appender").append("<p>Test</p>");
+    $("#appender").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
   }
 });
+
+// $.getJSON("/", function(data) {
+//   // For each one
+
+//   for (var i = 0; i < data.length; i++) {
+
+//     console.log(data[i]);
+//     console.log(".........................");
+//     // Display the apropos information on the page
+//     console.log("LOOK HERE!!", $("#appender"));
+
+
+
+
+//     $("#appender").append("<p>Test</p>");
+//     // $("#appender").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
+//   }
+// });
+
+
+
+
+// $(document).on("click", ".note-submit", function(e) {
+//   e.preventDefault();
+//   console.log("note button clicked")
+// });
+
+
 // Whenever someone clicks a p tag
 $(document).on("click", "p", function() {
   // Empty the notes from the note section
+
   $("#notes").empty();
   // Save the id from the p tag
   var thisId = $(this).attr("data-id");
+  console.log(thisId);
   // Now make an ajax call for the Article
   $.ajax({
     method: "GET",

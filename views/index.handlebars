@@ -6,17 +6,35 @@
 <ul>
   {{#each articles}}
   	<li>
-  		<p><span class="label">Article:</span> {{this.title}}</p>
-      <p><span class="label">Link:</span> {{this.link}}</p>
-      <p><span class="label">Note:</span> {{this.note}}</p>
+  		<div id="appender"><span class="label">Article:</span> {{this.title}}</div>
+      <div><span class="label">Link:</span> {{this.link}}</div>
+      <div><span class="label">Note:</span> {{this.note}}</div>
+      <a href="/articles/{{this.id}}">Add a Note</a>
+      <!--<div id="articles"></div>
+      <div id="notes"></div>-->
 
       {{!-- Form should send a delete command to the server --}}
-      <form>
+      <!--<form>
         <input type="hidden" name="id" value="{{this.id}}">
         <button type="submit">Add a Note</button>
-      </form>
+      </form>-->
 
-      <a href="/{{this.id}}">Add a Note</a>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="auth">Note Title:</label>
+    <input type="text" id="auth" name="author">
+  </div>
+
+  <div class="form-group">
+    <label for="quo">Note Content:</label>
+    <textarea id="quo" name="quote" rows="8" cols="40"></textarea>
+  </div>
+
+  <button class="note-submit" type="submit">Add Note</button>
+</form>
+
+      <a href="/articles/{{this.id}}">Add a Note</a>
   	</li>
   {{/each}}
 </ul>
@@ -36,5 +54,5 @@
     <textarea id="quo" name="quote" rows="8" cols="40"></textarea>
   </div>
 
-  <button type="submit">Add Note</button>-->
-</form>
+  <button type="submit">Add Note</button>
+</form>-->
