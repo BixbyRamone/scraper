@@ -169,9 +169,9 @@ app.post("/articles/:id", function(req, res) {
   });
 });
 
-
+var PortVar = process.env.PORT || 3000;
 
 // Listen on port 3000
-app.listen(3000, function() {
+app.listen(PortVar, function() {
   console.log("App running on port 3000!");
 });
