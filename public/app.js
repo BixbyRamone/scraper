@@ -15,9 +15,9 @@ $.getJSON("/", function(data) {
 });
 
 
- $.ajax({
-    method: "GET",
-    url: "/articles/"
+ // $.ajax({
+ //    method: "GET",
+ //    url: "/articles/"
 // Grab the articles as a json
 
 $.getJSON("/articles", function(data) {
@@ -29,7 +29,7 @@ $.getJSON("/articles", function(data) {
     console.log("LOOK HERE!!", $("#appender"));
     // Display the apropos information on the page
      // $("#appender").append("<p>Test</p>");
-    $("#appender").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
+    $("#appender").append("<p data-id='" + data[i]._id + "'>" + "</p>");
   }
 });
 

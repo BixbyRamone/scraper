@@ -33,7 +33,7 @@ app.use(express.static("public"));
 //   /* other options */
 // });
 
-mongoose.connect("mongodb://localhost/scraperarticles2");
+mongoose.connect(process.env.MONGODB_URI);
 var db = mongoose.connection;
 // Show any mongoose errors
 db.on("error", function(error) {
